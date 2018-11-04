@@ -1,4 +1,4 @@
-
+require 'pry'
 require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
@@ -24,6 +24,7 @@ class ApplicationController < Sinatra::Base
   get '/posts' do
     @posts = Post.all
     erb :index
+        binding.pry
   end
 
   get '/posts/:id' do
